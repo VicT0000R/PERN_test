@@ -3,6 +3,7 @@ import './App.css';
 
 // components
 import InputTodo from "./components/InputTodo";
+import ListTodos from "./components/ListTodos"
 
 
 function App() {
@@ -10,8 +11,10 @@ function App() {
   <Fragment>
     <div className="container">
       <InputTodo/>
+      <ListTodos/>
     </div>
-  </Fragment>)
+  </Fragment>
+  )
 }
 
 export default App;
