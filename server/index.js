@@ -36,7 +36,7 @@ app.get("/todos", async(req,res) => {
             `);
             res.json(allTodos.rows);
     } catch (err) {
-        console.log(err.message);
+        console.error(err.message);
     }
 })
 
@@ -52,7 +52,7 @@ app.get("/todos/:id", async(req,res) => {
 
         res.json(todo.rows[0]);
     } catch (err) {
-        console.log(err.message);
+        console.error(err.message);
     }
 })
 
@@ -70,7 +70,7 @@ app.put("/todos/:id", async(req,res) => {
 
             res.json("todo was updated")
     } catch (err) {
-        console.log(err.message);
+        console.error(err.message);
     }
 })
 
@@ -86,7 +86,7 @@ app.delete("/todos/:id", async(req,res) => {
 
         res.json("todo was deleted")
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
     }
 })
 
@@ -102,5 +102,5 @@ app.delete("/todos/:id", async(req,res) => {
 
 
 app.listen(5000, () => {
-    console.log('server has started on port 5000');
+    console.error('server has started on port 5000');
 })
