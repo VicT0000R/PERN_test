@@ -1,5 +1,8 @@
 import React,{Fragment, useEffect, useState} from "react";
 
+import EditTodo from "./EditTodo";
+
+
 const ListTodos = () => {
     const [todos, setTodos] = useState([]);
 
@@ -45,7 +48,7 @@ const ListTodos = () => {
                     {/* Only testing purpose not working connection with api and DB */}
                     <tr>
                         <td>loremloremloreml</td>
-                        <td><button className="btn btn-">Edit</button></td>
+                        <td><EditTodo todo={todos}/></td>
                         <td><button className="btn btn-danger">Delete</button></td>
                     </tr>
                     {/*  */}
@@ -53,7 +56,7 @@ const ListTodos = () => {
                         todos.map(todo => (
                             <tr key={todo.todo_id}>
                                 <td>{todo.description}</td>
-                                <td><button className="btn btn-">Edit</button></td>
+                                <td><EditTodo todo={todo}/></td>
                                 <td><button className="btn btn-danger" onClick={() => deleteTodo(todo.todo_id)}>Delete</button> </td>
                             </tr>
                         ))
